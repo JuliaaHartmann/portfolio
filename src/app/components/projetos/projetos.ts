@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { ModalProjeto } from './modal-projeto/modal-projeto';
 
 interface Projeto {
   titulo: string;
@@ -9,11 +10,13 @@ interface Projeto {
 }
 
 @Component({
-  imports: [],
+  imports: [ModalProjeto],
   selector: 'app-projetos',
   templateUrl: './projetos.html',
 })
 export class Projetos {
+  public readonly projetoSelecionado = signal<Projeto | undefined>(undefined);
+
   public readonly projetos: Projeto[] = [
     {
       titulo: 'Gerador de Certificados Online',
