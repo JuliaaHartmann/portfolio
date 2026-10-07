@@ -29,9 +29,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"],
+            "scripts": ["bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {
@@ -71,6 +70,14 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://juliaahartmann.github.io/portfolio/",
+            "name": "Júlia Hartmann",
+            "email": "juliahartmann@outlook.com.br"
+          }
         }
       }
     }
